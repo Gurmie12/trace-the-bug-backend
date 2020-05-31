@@ -19,6 +19,12 @@ app.get('/correlation/:location/:start', cors(), (req, res) =>{
     res.send(result);
 });
 
+app.get('/', cors(), (req,res) =>{
+    res.send(
+        "REST API For Trace The Bug"
+    );
+});
+
 
 const port = process.env.PORT || 3001;
 app.listen(port, () =>{
