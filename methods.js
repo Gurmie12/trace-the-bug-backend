@@ -101,7 +101,6 @@ module.exports = {
         if(city === "ottawa"){
             isMatchOtt = true;
         }
-
         if(isMatchGta){
             const mobility = this.filterByLocationCity('toronto');
             const applekeys = Object.keys(mobility[0]);
@@ -118,6 +117,9 @@ module.exports = {
 
             firstDay.setDate(date.getDate() - 5);
             lastDay.setDate(date.getDate() + 5);
+
+            firstDay.setMonth(firstDay.getMonth() - 1);
+            lastDay.setMonth(lastDay.getMonth() - 1);
 
             mobility.forEach(data =>{
                 applekeys.forEach(key =>{
@@ -180,6 +182,9 @@ module.exports = {
             firstDay.setDate(date.getDate() - 5);
             lastDay.setDate(date.getDate() + 5);
 
+            firstDay.setMonth(firstDay.getMonth() - 1);
+            lastDay.setMonth(lastDay.getMonth() - 1);
+
             mobility.forEach(data =>{
                 applekeys.forEach(key =>{
                     let reg = /\d/g;
@@ -236,6 +241,9 @@ module.exports = {
 
             firstDay.setDate(date.getDate() - 5);
             lastDay.setDate(date.getDate() + 5);
+
+            firstDay.setMonth(firstDay.getMonth() - 1);
+            lastDay.setMonth(lastDay.getMonth() - 1);
 
             googleOntario.forEach(data =>{
                 let curDate = new Date(data.date.replace('T00:00:00', '').replace(/-/g, "/"));
